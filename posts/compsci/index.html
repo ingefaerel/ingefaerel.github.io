@@ -1,14 +1,32 @@
 ---
-layout: default
+layout: page
 title: Computer Science
+background: "/img/bg-post.jpg"
 ---
 
-<h1>CS Posts</h1>
-<ul>
-  {% for post in site.categories.compsci %}
-  <li>
-    <a href="{{ post.url }}">{{ post.title }}</a> – {{ post.date | date:
-    "%Y-%m-%d" }}
-  </li>
-  {% endfor %}
-</ul>
+{% assign category_posts = site.categories.compsci %} {% if category_posts.size
+> 0 %} {% for post in category_posts %}
+
+<article class="post-preview">
+  <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+    <h2 class="post-title">{{ post.title }}</h2>
+    {% if post.subtitle %}
+    <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+    {% else %}
+    <h3 class="post-subtitle">
+      {{ post.excerpt | strip_html | truncatewords: 15 }}
+    </h3>
+    {% endif %}
+  </a>
+  <p class="post-meta">
+    Posted by {% if post.author %} {{ post.author }} {% else %} {{ site.author
+    }} {% endif %} on {{ post.date | date: '%B %d, %Y' }} &middot; {% include
+    read_time.html content=post.content %}
+  </p>
+</article>
+
+<hr />
+
+{% endfor %} {% else %}
+<p>No posts found in this category.</p>
+{% endif %}
