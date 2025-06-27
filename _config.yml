@@ -1,14 +1,14 @@
-title:              Clean Blog
-email:              your-email@example.com
-description:        A Blog Theme by Start Bootstrap
-author:             Start Bootstrap
+title:              Elly learns everything
+email:              
+description:        Hey, I'm Elly. This is my blog, where i try to document my leraning journies in different subjects.
+author:             ingefaerel
 baseurl:            ""
 url:                "https://ingefaerel.github.io"
 
 # Social Profiles
-twitter_username:   SBootstrap
-github_username:    StartBootstrap
-facebook_username:  StartBootstrap
+twitter_username:   ingefaerel
+github_username:    ingefaerel
+facebook_username:  
 instagram_username:  
 linkedin_username:
 
